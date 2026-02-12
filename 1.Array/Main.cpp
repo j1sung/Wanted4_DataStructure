@@ -25,16 +25,18 @@ public:
 		
 		// 어써트(꼭 검증이 필요한 구문에 활용).
 		// 디버그 모드에서만 동작 -> Release에서는 
-		//assert(false);
-		assert(index < 0 || index >= size);
+		
+		// 인덱스 범위 확인. 
+		// assert는 true면 통과, false면 중단. -> assert(false);일때 조건실패로 중단됨.
+		assert(0 <= index && index < size);
 
 		
-		// 인덱스 범위 확인.
-		if (index < 0  index >= size)
+		// 인덱스 범위 확인. -> assert 직접 구현
+		/*if (index < 0  || index >= size)
 		{
 			__debugbreak();
 		}
-		
+		*/
 		return data[index];
 	}
 
