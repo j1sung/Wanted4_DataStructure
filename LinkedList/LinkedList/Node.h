@@ -7,7 +7,7 @@ class Node
 {
 	// 연결 리스트 friend 지정.
 	template<typename T>
-	friend class LinkedList;
+	friend class LinkedList; // friend로 선언해서 private인 멤버 접근 가능
 
 	// 노드의 생성은 LinkedList 에서만 가능하도록 private으로 지정.
 private:

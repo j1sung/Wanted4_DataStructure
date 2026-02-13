@@ -86,9 +86,6 @@
     <ClInclude Include="LinkedList\LinkedList.h" />
     <ClInclude Include="LinkedList\Node.h" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="LinkedList\Node.inl" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
