@@ -3,6 +3,8 @@
 #include "Node.h"
 #include <iostream>
 
+// 메모리 레이아웃 찾아보기
+
 // 단일 연결 리스트 클래스.
 // Node를 내부에서 관리.
 // 정렬 기반으로 노드 추가 (전제: 비교가 가능해야 함).
@@ -18,6 +20,26 @@ public:
 	~LinkedList()
 	{
 		// Todo: 메모리 정리
+		// 메모리 정리
+		NodeType current = head;
+		NodeType next = nullptr;
+
+		// 순회하면서 메모리 해제.
+		while (current)
+		{
+			// 삭제하기 전에 다음 노드 미리 저장.
+			next = current->next;
+
+			// 삭제.
+			delete current;
+
+			// 다음 노드로 이동.
+			current - next;
+		}
+
+		// 정리.
+		head = nullptr;
+		count = 0;
 	}
 
 	// 노드 추가 함수.
