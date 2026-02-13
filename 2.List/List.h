@@ -96,6 +96,8 @@ private:
 	PointerType ptr = nullptr;
 };
 
+
+
 // 자동으로 크기가 늘어나는 배열 (List / Vector).
 template<typename T>
 class List
@@ -161,7 +163,7 @@ public:
 	T& operator[](int index)
 	{
 		//static_assert(index < 0 || index >= size);
-		assert(index < 0 || index >= size);
+		assert(0 <= index && index < size);
 		return data[index];
 	}
 
