@@ -1,7 +1,7 @@
 #include "Container/Stack.h"
 #include "Location2D.h"
 #include <iostream>  // std::cout.
-#include <windows.h> // 콘솔 제어를 위해 활용.
+#include <Windows.h> // 콘솔 제어를 위해 활용.
 
 // 맵 (미로).
 // 작은 맵.
