@@ -25,6 +25,16 @@ int main()
 		int number2 = 30;
 	}
 
+	// 전위 순회 테스트.
+	tree.PreorderTraversal();
+
+	// 삭제 테스트.
+	if (tree.Remove(9))
+	{
+		int number3 = 30;
+	}
+
+
 	int number = 10;
 
 	std::cin.get();
