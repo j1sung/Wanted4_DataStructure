@@ -22,7 +22,7 @@ public:
 	~BinarySearchTree()
 	{
 		// 트리 제거 함수 구현 후 호출.
-		//Destroy();
+		Destroy();
 	}
 
 	// 삽입.
@@ -70,8 +70,117 @@ public:
 	}
 
 	// 순회.
+	// 전위 순회.
+	void PreorderTraverse(int depth = 0)
+	{
+		std::cout << "========= 전위 순회 시작 ==========\n";
+
+		// 순회 재귀 함수 호출.
+		PreorderTraverseRecursive(root, depth);
+
+		std::cout << "========= 전위 순회 종료 ==========\n";
+	}
+
+	// 중위 순회.
+	void InorderTraverse(int depth = 0)
+	{
+		std::cout << "========= 중위 순회 시작 ==========\n";
+
+		// 순회 재귀 함수 호출.
+		InorderTraverseRecursive(root, depth);
+
+		std::cout << "========= 중위 순회 종료 ==========\n";
+	}
+
+	// 후위 순회.
+	void PostorderTraverse(int depth = 0)
+	{
+		std::cout << "========= 후위 순회 시작 ==========\n";
+
+		// 순회 재귀 함수 호출.
+		PostorderTraverseRecursive(root, depth);
+
+		std::cout << "========= 후위 순회 종료 ==========\n";
+	}
+
 private:
 	// 재귀 함수.
+
+	// 전위 순회 재귀 함수.
+	void PreorderTraverseRecursive(Node<T>* node, int depth = 0)
+	{
+		// 종료 조건.
+		if (!node)
+		{
+			return;
+		}
+
+		// 뎁스 출력.
+		for (int ix = 0; ix < depth; ++ix)
+		{
+			std::cout << "  ";
+		}
+
+		// 부모 노드 처리. node == node->parent->left ? 
+		std::cout << node->data << "\n";
+
+		// 왼쪽 하위 트리 처리.
+		PreorderTraverseRecursive(node->left, depth + 1);
+
+		// 오른쪽 하위 트리 처리.
+		PreorderTraverseRecursive(node->right, depth + 1);
+	}
+
+	// 중위 순회 재귀 함수.
+	void InorderTraverseRecursive(Node<T>* node, int depth = 0)
+	{
+		// 종료 조건.
+		if (!node)
+		{
+			return;
+		}
+
+
+		// 왼쪽 하위 트리 처리.
+		InorderTraverseRecursive(node->left, depth + 1);
+
+		// 뎁스 출력.
+		for (int ix = 0; ix < depth; ++ix)
+		{
+			std::cout << "  ";
+		}
+
+		// 부모 노드 처리. node == node->parent->left ? "L: "..
+		std::cout << node->data << "\n";
+
+		// 오른쪽 하위 트리 처리.
+		InorderTraverseRecursive(node->right, depth + 1);
+	}
+
+	// 후위 순회 재귀 함수.
+	void PostorderTraverseRecursive(Node<T>* node, int depth = 0)
+	{
+		// 종료 조건.
+		if (!node)
+		{
+			return;
+		}
+
+		// 왼쪽 하위 트리 처리.
+		PostorderTraverseRecursive(node->left, depth + 1);
+
+		// 오른쪽 하위 트리 처리.
+		PostorderTraverseRecursive(node->right, depth + 1);
+
+		// 뎁스 출력.
+		for (int ix = 0; ix < depth; ++ix)
+		{
+			std::cout << "  ";
+		}
+
+		// 부모 노드 처리. node == node->parent->left ? "L: "..
+		std::cout << node->data << "\n";
+	}
 
 	// 삽입 재귀 함수.
 	Node<T>* InsertNodeRecursive(Node<T>* node, Node<T>* parent, const T& newData)

@@ -30,6 +30,15 @@ int main()
 	tree.DeleteNode(10);
 	tree.DeleteNode(8);
 
+	// 전위 순회.
+	tree.PreorderTraverse();
+
+	// 중위 순회
+	tree.InorderTraverse();
+
+	// 후위 순회
+	tree.PostorderTraverse();
+
 	std::cin.get();
 	return 0;
 }
