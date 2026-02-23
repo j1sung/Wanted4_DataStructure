@@ -13,8 +13,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{b83b050a-ec40-4612-93c4-1436d2995a49}</ProjectGuid>
-    <RootNamespace>_6_StackMaze</RootNamespace>
+    <ProjectGuid>{bead6dcc-1c50-4734-9049-9066f8ccb5e9}</ProjectGuid>
+    <RootNamespace>_11_BST</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -81,8 +81,8 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Container\Stack.h" />
-    <ClInclude Include="Location2D.h" />
+    <ClInclude Include="Container\BinarySearchTree.h" />
+    <ClInclude Include="Container\Node.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
