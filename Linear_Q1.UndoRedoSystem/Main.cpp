@@ -30,6 +30,14 @@ int main()
 
 	}
 
+	// 큐 내부에 남은 메모리 정리
+	char* out = nullptr;
+	while (q.Dequeue(out))
+	{
+		delete[] out;
+		out = nullptr;
+	}
+
 	std::cin.get();
 	return 0;
 }
