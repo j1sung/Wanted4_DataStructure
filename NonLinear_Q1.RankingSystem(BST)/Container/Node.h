@@ -47,6 +47,36 @@ public:
 		return *this;
 	}
 
+	bool operator==(const Entry& other) const
+	{
+		return IsSameScore(other) && IsSameName(other);
+	}
+
+	bool operator>(const Entry& other) const
+	{
+		return score > other.score;
+	}
+
+	bool operator<(const Entry& other) const
+	{
+		return score < other.score;
+	}
+
+	bool IsSameScore(const Entry& other) const
+	{
+		return score == other.score;
+	}
+
+	bool IsSameName(const Entry& other) const
+	{
+		// 주소값 비교. -> 처음 root조차 없을때
+		if (name == nullptr || other.name == nullptr)
+			return name == other.name;
+
+		// 기존 node가 있을때
+		return strcmp(name, other.name) == 0;
+	}
+
 public:
 	char* name = nullptr;
 	int score = 0;
@@ -57,11 +87,13 @@ class Node
 {
 	// friend 선언
 	template<typename T>
-	friend class BinarySerchTree;
+	friend class BinarySearchTree;
 
 public:
-	Node(const T& data, Node<T>* parent = nullptr)
+	Node(const T& data, Node<T>* const parent = nullptr)
 		: data(data), parent(parent)
+	{ }
+
 private:
 	// 노드에 저장 데이터
 	T data = T();
